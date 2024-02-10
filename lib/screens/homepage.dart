@@ -11,7 +11,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF101D25),
+      backgroundColor: Color(0xFF18252D),
       body: Column(
         children: [
           //top of the app
@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
             width: 411,
             height: 129,
             padding: EdgeInsets.only(top: 20),
-            color: Colors.amber,
+            color: Color(0xFF232D36),
             child: Column(
               children: [
                 // app logo and icons
@@ -30,6 +30,7 @@ class _HomePageState extends State<HomePage> {
                       child: Text(
                         "StackChat",
                         style: TextStyle(
+                          color: Colors.white,
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                         ),
@@ -40,11 +41,19 @@ class _HomePageState extends State<HomePage> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         IconButton(
+                          color: Colors.white,
+                          iconSize: 25,
+                          icon: Icon(Icons.camera_alt_outlined),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          color: Colors.white,
                           iconSize: 25,
                           icon: Icon(Icons.search),
                           onPressed: () {},
                         ),
                         IconButton(
+                          color: Colors.white,
                           iconSize: 25,
                           icon: Icon(Icons.more_vert),
                           onPressed: () {},
@@ -56,10 +65,11 @@ class _HomePageState extends State<HomePage> {
                 const DefaultTabController(
                     initialIndex: 1,
                     animationDuration: Durations.short1,
-                    length: 4,
+                    length: 3,
                     child: TabBar(
+                      indicatorColor: Color(0xFF9DA5AC),
+                      labelColor: Color(0xFF9DA5AC),
                       tabs: [
-                        Expanded(child: Tab(icon: Icon(Icons.camera_alt))),
                         Tab(
                           text: "CHATS",
                         ),

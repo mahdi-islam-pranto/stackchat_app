@@ -62,14 +62,18 @@ class _HomePageState extends State<HomePage> {
                     ))
                   ],
                 ),
-                const DefaultTabController(
-                    initialIndex: 1,
+                DefaultTabController(
+                    initialIndex: 2,
                     animationDuration: Durations.short1,
-                    length: 3,
+                    length: 4,
                     child: TabBar(
                       indicatorColor: Color(0xFF9DA5AC),
                       labelColor: Color(0xFF9DA5AC),
                       tabs: [
+                        Flexible(
+                          flex: 1,
+                          child: Tab(icon: Icon(Icons.more_vert)),
+                        ),
                         Tab(
                           text: "CHATS",
                         ),

@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                 DefaultTabController(
                     initialIndex: 2,
                     animationDuration: Durations.short1,
-                    length: 4,
+                    length: 5,
                     child: TabBar(
                       indicatorColor: Color(0xFF9DA5AC),
                       labelColor: Color(0xFF9DA5AC),
@@ -73,6 +73,9 @@ class _HomePageState extends State<HomePage> {
                         Flexible(
                           flex: 1,
                           child: Tab(icon: Icon(Icons.more_vert)),
+                        ),
+                        Tab(
+                          text: "group icon",
                         ),
                         Tab(
                           text: "CHATS",

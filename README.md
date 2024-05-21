@@ -1,6 +1,6 @@
 # stackchat
 
-A new Flutter project.
+Whatsapp dark mode UI clone
 
 ## Getting Started
 

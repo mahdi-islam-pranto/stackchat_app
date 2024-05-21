@@ -18,8 +18,8 @@ class _HomePageState extends State<HomePage> {
           Container(
             width: 411,
             height: 129,
-            padding: EdgeInsets.only(top: 20),
-            color: Color(0xFF232D36),
+            padding: const EdgeInsets.only(top: 20),
+            color: const Color(0xFF232D36),
             child: Column(
               children: [
                 // app logo and icons
@@ -37,57 +37,47 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Expanded(
-                        child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        IconButton(
-                          color: Colors.white,
-                          iconSize: 25,
-                          icon: Icon(Icons.camera_alt_outlined),
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          color: Colors.white,
-                          iconSize: 25,
-                          icon: Icon(Icons.search),
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          color: Colors.white,
-                          iconSize: 25,
-                          icon: Icon(Icons.more_vert),
-                          onPressed: () {},
-                        ),
-                      ],
-                    ))
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          IconButton(
+                            color: Colors.white,
+                            iconSize: 25,
+                            icon: const Icon(Icons.camera_alt_outlined),
+                            onPressed: () {},
+                          ),
+                          IconButton(
+                            color: Colors.white,
+                            iconSize: 25,
+                            icon: const Icon(Icons.search),
+                            onPressed: () {},
+                          ),
+                          IconButton(
+                            color: Colors.white,
+                            iconSize: 25,
+                            icon: const Icon(Icons.more_vert),
+                            onPressed: () {},
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
-                DefaultTabController(
-                    initialIndex: 2,
-                    animationDuration: Durations.short1,
-                    length: 5,
-                    child: TabBar(
-                      indicatorColor: Color(0xFF9DA5AC),
-                      labelColor: Color(0xFF9DA5AC),
-                      tabs: [
-                        Flexible(
-                          flex: 1,
-                          child: Tab(icon: Icon(Icons.more_vert)),
-                        ),
-                        Tab(
-                          text: "group icon",
-                        ),
-                        Tab(
-                          text: "CHATS",
-                        ),
-                        Tab(
-                          text: "STATUS",
-                        ),
-                        Tab(
-                          text: "CALLS",
-                        ),
-                      ],
-                    ))
+                const DefaultTabController(
+                  initialIndex: 2,
+                  length: 5,
+                  child: TabBar(
+                    indicatorColor: Color(0xFF9DA5AC),
+                    labelColor: Color(0xFF9DA5AC),
+                    tabs: [
+                      Tab(icon: Icon(Icons.camera_alt_outlined)),
+                      Tab(icon: Icon(Icons.group)),
+                      Tab(text: "CHATS"),
+                      Tab(text: "STATUS"),
+                      Tab(text: "CALLS"),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

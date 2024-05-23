@@ -15,6 +15,7 @@ class Chat extends StatelessWidget {
             backgroundImage: NetworkImage(
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYloKopOZ_oudmWTNK-xVmdVPxdKsgKniHbr8Vr0hk1g&s"),
           ),
+
           // name, msg
           Padding(
             padding: EdgeInsets.only(left: 15),

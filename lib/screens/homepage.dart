@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   // tab controller
   late TabController _tabController;
+
   @override
   void initState() {
     super.initState();
@@ -42,7 +43,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             child: Column(
               children: [
                 // app logo and icons
-
                 Row(
                   children: [
                     const Padding(
@@ -72,11 +72,40 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             icon: const Icon(Icons.search),
                             onPressed: () {},
                           ),
-                          IconButton(
-                            color: Colors.white,
-                            iconSize: 25,
-                            icon: const Icon(Icons.more_vert),
-                            onPressed: () {},
+                          PopupMenuButton<String>(
+                            color: Color(0xff313C42),
+                            iconColor: textColor,
+                            onSelected: (String result) {
+                              // Handle the selection from the popup menu
+                              print('Selected: $result');
+                            },
+                            itemBuilder: (BuildContext context) =>
+                                <PopupMenuEntry<String>>[
+                              PopupMenuItem<String>(
+                                labelTextStyle: MaterialStatePropertyAll(
+                                    TextStyle(color: textColor)),
+                                value: 'Option 1',
+                                child: const Text('New Group'),
+                              ),
+                              PopupMenuItem<String>(
+                                labelTextStyle: MaterialStatePropertyAll(
+                                    TextStyle(color: textColor)),
+                                value: 'Option 1',
+                                child: const Text('New Broadcast'),
+                              ),
+                              PopupMenuItem<String>(
+                                labelTextStyle: MaterialStatePropertyAll(
+                                    TextStyle(color: textColor)),
+                                value: 'Option 1',
+                                child: const Text('Starred Messages'),
+                              ),
+                              PopupMenuItem<String>(
+                                labelTextStyle: MaterialStatePropertyAll(
+                                    TextStyle(color: textColor)),
+                                value: 'Option 1',
+                                child: const Text('Settings'),
+                              ),
+                            ],
                           ),
                         ],
                       ),

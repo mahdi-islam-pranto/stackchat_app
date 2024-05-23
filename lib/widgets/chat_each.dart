@@ -12,8 +12,7 @@ class Chat extends StatelessWidget {
           // profile image
           CircleAvatar(
             radius: 25.0,
-            backgroundImage: NetworkImage(
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYloKopOZ_oudmWTNK-xVmdVPxdKsgKniHbr8Vr0hk1g&s"),
+            backgroundImage: AssetImage("assets/images/pp.jpg"),
           ),
 
           // name, msg

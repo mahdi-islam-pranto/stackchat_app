@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _tabController = TabController(
+      initialIndex: 1,
       length: 4,
       vsync: this,
     );
@@ -118,7 +119,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   indicatorColor: const Color(0xFF9DA5AC),
                   labelColor: const Color(0xFF9DA5AC),
                   tabs: const [
-                    Tab(icon: Icon(Icons.camera_alt_outlined)),
+                    Tab(
+                        icon: Icon(Icons.camera_alt_outlined),
+                        iconMargin: EdgeInsets.all(0)),
                     Tab(text: "CHATS"),
                     Tab(text: "STATUS"),
                     Tab(text: "CALLS"),

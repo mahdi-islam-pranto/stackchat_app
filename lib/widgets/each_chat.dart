@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stackchat/screens/conversation_view.dart';
 import 'package:stackchat/widgets/image_popup.dart';
 
 class ConversationList extends StatefulWidget {
@@ -22,11 +23,15 @@ class _ConversationListState extends State<ConversationList> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        print("###### Chat Pressed");
-      },
+      onTap: () {},
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ConversationView(),
+              ));
+        },
         child: Container(
           padding:
               const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),

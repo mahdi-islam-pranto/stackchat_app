@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           displayColor: Colors.blue,
         ),
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }

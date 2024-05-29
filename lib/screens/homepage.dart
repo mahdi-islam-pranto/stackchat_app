@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             onPressed: () {},
                           ),
                           PopupMenuButton<String>(
-                            color: Color(0xff313C42),
+                            color: const Color(0xff313C42),
                             iconColor: textColor,
                             onSelected: (String result) {
                               // Handle the selection from the popup menu

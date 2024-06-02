@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stackchat/colors/colors.dart';
 import 'package:stackchat/screens/all_chat_page.dart';
+import 'package:stackchat/screens/status_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -133,17 +134,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           Expanded(
             child: TabBarView(
               controller: _tabController,
-              children: const [
+              children: [
                 // Content for the "Camera" tab
-                Center(
+                const Center(
                     child: Text(
                   'Camera Tab',
                   style: TextStyle(color: Colors.white),
                 )),
                 // Content for the "Chats" tab
-                ChatPage(),
+                const ChatPage(),
                 // Content for the "Status" tab
-                Center(child: Text('Status Tab')),
+                StatusPage(),
                 // Content for the "Calls" tab
                 Center(child: Text('Calls Tab')),
               ],

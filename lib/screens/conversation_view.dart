@@ -76,6 +76,15 @@ class _ConversationViewState extends State<ConversationView> {
                     ],
                   ),
                 ),
+                // call icon
+                const Icon(
+                  Icons.call,
+                  color: Colors.white54,
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+
                 const Icon(
                   Icons.settings,
                   color: Colors.white54,

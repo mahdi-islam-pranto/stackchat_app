@@ -1,62 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:stackchat/colors/colors.dart';
-import 'package:stackchat/models/status_model.dart';
+import 'package:stackchat/models/call_model.dart';
 import 'package:stackchat/widgets/image_popup.dart';
 
-class StatusPage extends StatelessWidget {
-  StatusPage({super.key});
-
-  List<StatusModel> statusList = [
-    StatusModel(
-        name: "Jorge Henry",
-        imageURL:
-            "https://www.shutterstock.com/image-photo/image-handsome-smiling-young-african-260nw-722913181.jpg",
-        time: "20 min ago"),
-    StatusModel(
-        name: "Philip Fox",
+class CallPage extends StatelessWidget {
+  CallPage({super.key});
+  List<CallModel> call_list = [
+    CallModel(
+        name: "Jone Wick",
+        icon: const Icon(Icons.call_missed, color: Colors.red),
         imageURL:
             "https://www.shutterstock.com/image-photo/human-face-260nw-371192081.jpg",
-        time: "23 hrs ago"),
-    StatusModel(
-        name: "Jane Russel",
-        imageURL:
-            "https://img.freepik.com/free-photo/indoor-shot-beautiful-happy-african-american-woman-smiling-cheerfully-keeping-her-arms-folded-relaxing-indoors-after-morning-lectures-university_273609-1270.jpg",
-        time: "Now"),
-    StatusModel(
+        time: "9:30 pm"),
+    CallModel(
         name: "Debra Hawkins",
+        icon: const Icon(Icons.call_received, color: Color(0xFF04A595)),
         imageURL:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5bkKSg6FgDrFlVw5A4nR77-9bbmDX3WHXnakxBrlxR5UkQPYJHkpYEUFTb6ki0Ydb8I&usqp=CAU",
-        time: "Now"),
-    StatusModel(
-        name: "John Wick",
-        imageURL:
-            "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        time: "2hrs ago"),
-    StatusModel(
+        time: "12:24 am"),
+    CallModel(
         name: "Jorge Henry",
+        icon: const Icon(Icons.call_end, color: Color(0xFF04A595)),
         imageURL:
             "https://www.shutterstock.com/image-photo/image-handsome-smiling-young-african-260nw-722913181.jpg",
-        time: "20 min ago"),
-    StatusModel(
+        time: "10:30 pm"),
+    CallModel(
         name: "Philip Fox",
-        imageURL:
-            "https://www.shutterstock.com/image-photo/human-face-260nw-371192081.jpg",
-        time: "23 hrs ago"),
-    StatusModel(
-        name: "Jane Russel",
-        imageURL:
-            "https://img.freepik.com/free-photo/indoor-shot-beautiful-happy-african-american-woman-smiling-cheerfully-keeping-her-arms-folded-relaxing-indoors-after-morning-lectures-university_273609-1270.jpg",
-        time: "Now"),
-    StatusModel(
-        name: "Debra Hawkins",
-        imageURL:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5bkKSg6FgDrFlVw5A4nR77-9bbmDX3WHXnakxBrlxR5UkQPYJHkpYEUFTb6ki0Ydb8I&usqp=CAU",
-        time: "Now"),
-    StatusModel(
-        name: "John Wick",
+        icon: const Icon(Icons.call_missed, color: Colors.red),
         imageURL:
             "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        time: "2hrs ago"),
+        time: "4:50 am"),
+    CallModel(
+        name: "Mahdi Islam",
+        icon: const Icon(Icons.call_merge, color: Color(0xFF04A595)),
+        imageURL:
+            "https://img.freepik.com/free-photo/indoor-shot-beautiful-happy-african-american-woman-smiling-cheerfully-keeping-her-arms-folded-relaxing-indoors-after-morning-lectures-university_273609-1270.jpg",
+        time: "3:10 pm"),
+    CallModel(
+        name: "Jone Wick",
+        icon: const Icon(Icons.call_missed, color: Colors.red),
+        imageURL:
+            "https://www.shutterstock.com/image-photo/human-face-260nw-371192081.jpg",
+        time: "8:36 am"),
   ];
 
   @override
@@ -71,7 +56,7 @@ class StatusPage extends StatelessWidget {
           backgroundColor: iconBackColor,
           foregroundColor: textColor,
           onPressed: () {},
-          child: const Icon(Icons.camera_alt_outlined),
+          child: const Icon(Icons.call),
         ),
       ),
       body: SingleChildScrollView(
@@ -92,7 +77,7 @@ class StatusPage extends StatelessWidget {
 
             // all user status
             ListView.builder(
-              itemCount: statusList.length,
+              itemCount: call_list.length,
               shrinkWrap: true,
               padding: const EdgeInsets.only(top: 10, bottom: 10),
               physics: const NeverScrollableScrollPhysics(),
@@ -106,23 +91,20 @@ class StatusPage extends StatelessWidget {
                         child: Row(
                           children: <Widget>[
                             CircleAvatar(
-                              maxRadius: 33,
-                              backgroundColor: iconBackColor,
-                              child: CircleAvatar(
-                                backgroundImage:
-                                    NetworkImage(statusList[index].imageURL),
-                                maxRadius: 30,
-                                child: GestureDetector(
-                                  onTap: () async {
-                                    await showDialog(
-                                        context: context,
-                                        builder: (_) => ImageDialog(
-                                              image: statusList[index].imageURL,
-                                            ));
-                                  },
-                                ),
+                              backgroundImage:
+                                  NetworkImage(call_list[index].imageURL),
+                              maxRadius: 30,
+                              child: GestureDetector(
+                                onTap: () async {
+                                  await showDialog(
+                                      context: context,
+                                      builder: (_) => ImageDialog(
+                                            image: call_list[index].imageURL,
+                                          ));
+                                },
                               ),
                             ),
+
                             const SizedBox(
                               width: 16,
                             ),
@@ -133,23 +115,39 @@ class StatusPage extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     Text(
-                                      statusList[index].name,
+                                      call_list[index].name,
                                       style: const TextStyle(fontSize: 16),
                                     ),
                                     const SizedBox(
                                       height: 6,
                                     ),
-                                    Text(
-                                      statusList[index].time,
-                                      style: TextStyle(
-                                        fontSize: 13,
-                                        color: Colors.grey.shade600,
-                                      ),
+                                    Row(
+                                      children: [
+                                        // icon call status
+                                        call_list[index].icon,
+                                        const SizedBox(
+                                          width: 8,
+                                        ),
+                                        Text(
+                                          call_list[index].time,
+                                          style: TextStyle(
+                                            fontSize: 13,
+                                            color: Colors.grey.shade600,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
                                 ),
                               ),
                             ),
+                            // icons call & msg
+                            const InkWell(
+                              child: Icon(
+                                Icons.call,
+                                color: Color(0xFF04A595),
+                              ),
+                            )
                           ],
                         ),
                       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stackchat/colors/colors.dart';
 import 'package:stackchat/screens/all_chat_page.dart';
+import 'package:stackchat/screens/call_page.dart';
 import 'package:stackchat/screens/status_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -79,7 +80,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             iconColor: textColor,
                             onSelected: (String result) {
                               // Handle the selection from the popup menu
-                              print('Selected: $result');
                             },
                             itemBuilder: (BuildContext context) =>
                                 <PopupMenuEntry<String>>[
@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 // Content for the "Status" tab
                 StatusPage(),
                 // Content for the "Calls" tab
-                Center(child: Text('Calls Tab')),
+                CallPage(),
               ],
             ),
           ),
